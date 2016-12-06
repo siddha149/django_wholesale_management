@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{cust.Firstname}} {{cust.Lastname}}</title>
+</head>
+<body>
+<h1>Your Orders</h1>
+<ul>
+    {% for ord in corders %}
+    <li>{{ord.id}} {{ord.Pid}} {{ord.Qty}}</li>
+    {% endfor %}
+</ul>
+<h1>Products Available</h1>
+<ul>
+    {% for prod in products%}
+    <li>{{prod.id}} {{prod.Name}} {{prod.Price}}</li>
+    {% endfor %}
+</ul>
+<br/>
+<a href="/wholesale/customer/{{cust.id}}/order/">New Order</a>
+<br/>
+<a href="/wholesale/logoutauth">LOGOUT</a>
+</body>
+</html>

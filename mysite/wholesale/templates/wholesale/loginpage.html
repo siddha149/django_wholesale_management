@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<h1>Welcome Customer!!</h1>
+<h3>Please login...</h3>
+<br/>
+<form action = "/wholesale/loginauth/" method="post">
+    {% csrf_token %}
+    <h3>Username</h3>
+    <input type="text" name="username" id="username"/>
+    <h3>Password</h3>
+    <input type="password" name="password" id="password"/>
+    <br/>
+    <br/>
+    <input type="submit" value="Login"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Order</title>
+</head>
+<body>
+<h1>Select your order:</h1>
+<form action = "/wholesale/customer/{{cust.id}}/placeorder/" method="post">
+    {% csrf_token %}
+    <h3>Select product:</h3>
+    <select name="product">
+        {% for prod in products %}
+        <option value="{{prod.id}}">{{prod.Name}}</option>
+        {% endfor %}
+    </select>
+    <h3>Quantity:</h3>
+    <input type="number" name="quantity" id="quantity"/>
+    <br/>
+    <br/>
+    <input type="submit" value="Place Order"/>
+</form>
+<br/>
+<a href="/wholesale/logoutauth">LOGOUT</a>
+</body>
+</html>
